@@ -74,12 +74,10 @@ class PhotosCollectionViewController: UIViewController, UICollectionViewDataSour
             
             let image = UIImage(data: data)
             
-            if self.collectionView.indexPath(for: cell) == indexPath {
-                DispatchQueue.main.async {
+            DispatchQueue.main.async {
+                if self.collectionView.indexPath(for: cell) == indexPath {
                     cell.imageView.image = image
-                }
-            } else {
-                DispatchQueue.main.async {
+                } else {
                     cell.imageView.image = cell.imageView.image
                 }
             }
